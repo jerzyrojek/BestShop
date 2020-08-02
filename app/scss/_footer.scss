@@ -1,0 +1,44 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 89px;
+  background-color: #F7F7F7;
+  box-shadow: 0 -5px 40px #00000029
+}
+
+.footer__text {
+  margin-left: 2rem;
+
+  p:first-child {
+    font-weight: 300;
+    font-size: 1.625rem;
+    line-height: 1.875rem;
+    color: $primary-blue;
+    padding-bottom: 0.5rem;
+  }
+  p:last-child {
+    font-family: Open-Sans, sans-serif;
+    color: #A5A5A5;
+    font-size: 0.6875rem;
+    line-height: 1rem;
+  }
+}
+
+.footer__icons {
+  margin-right: 2rem;
+  img:first-child {
+    padding-right: 1.25rem;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .footer__text {
+    margin-left: 136px;
+  }
+
+  .footer__icons {
+    margin-right: 136px;
+  }
+}

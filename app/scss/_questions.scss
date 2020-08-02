@@ -1,0 +1,252 @@
+.questions__content {
+  margin-bottom:4rem;
+}
+.questions__content__text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom:3rem;
+  margin-left:4%;
+  p:first-child {
+    font-size: 49px;
+    line-height: 57px;
+  }
+  p:nth-child(2) {
+    font-family: Open-Sans, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  &-contact {
+    font-family: Open-Sans, sans-serif;
+    font-weight: 500;
+    align-items: center;
+    color: #A5A5A5;
+
+    p:nth-child(2){
+      padding-right: 20px;
+      margin:0;
+    }
+
+    img {
+      width: 27px;
+      height: 27px;
+      margin-right: 10px;
+    }
+    &-email {
+      display:flex;
+      margin-bottom:0.5rem;
+    }
+    &-phone {
+      display:flex;
+    }
+  }
+
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 4%;
+
+  input {
+    border: none;
+    border-bottom: 1px solid #95989A;
+    line-height: 43px;
+    margin-bottom: 43px;
+    font-size: 25px;
+  }
+
+  label {
+    font-family: Open-Sans, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    color: $primary-blue;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+  }
+
+  button {
+    width: 226px;
+    height: 57px;
+    background-color: $primary-blue;
+    border-radius: 35px;
+    box-shadow: 5px 10px 14px #07ACE629;
+    border: none;
+    color: #FFFFFF;
+    margin-left: 30%;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: bold;
+    font-family: Open-Sans, sans-serif;
+  }
+}
+
+
+
+
+.checkbox {
+  display: flex;
+}
+
+.checkbox > input {
+  height: 24px;
+  width: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position:absolute;
+  background: #FFFFFF;
+  border: 1px solid #95989A;
+  border-radius: 4px;
+  outline:none;
+  margin-bottom:0;
+}
+
+
+.checkbox > input:checked{
+  outline:none;
+  border:1px solid $primary-blue;
+}
+
+.checkbox > input:checked::after{
+  content:url("../assets/Checkmark.svg");
+  outline:none;
+  position:absolute;
+  top:-60%;
+  left:25%;
+}
+
+.checkbox p {
+  font-family: Open-Sans, sans-serif;
+  font-size: 12px;
+  line-height: 17px;
+  color: #707070;
+  padding-left: 34px;
+  padding-bottom: 20px;
+}
+
+
+
+@media screen and(min-width: 768px) {
+
+  .questions__content {
+    display:flex;
+    align-items: flex-start;
+  }
+  .questions__content__text {
+    display: flex;
+    margin-bottom:3rem;
+    width: 50%;
+
+    p:nth-child(2) {
+      margin-bottom: 2rem;
+      margin-top: 0.5rem;
+    }
+
+    &-contact {
+      align-items: center;
+      display:flex;
+
+      p:nth-child(2){
+        padding-right: 20px;
+        margin:0;
+      }
+
+      img {
+        width: 27px;
+        height: 27px;
+        margin-right: 10px;
+      }
+      &-email {
+        display:flex;
+        margin:0;
+      }
+      &-phone {
+        display:flex;
+      }
+    }
+
+  }
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left:0;
+
+    button {
+
+    }
+  }
+
+
+
+
+  .checkbox {
+    display: flex;
+  }
+
+  .checkbox > input {
+    height: 24px;
+    width: 24px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position:absolute;
+    background: #FFFFFF;
+    border: 1px solid #95989A;
+    border-radius: 4px;
+    outline:none;
+    margin-bottom:0;
+  }
+
+
+  .checkbox > input:checked{
+    outline:none;
+    border:1px solid $primary-blue;
+  }
+
+  .checkbox > input:checked::after{
+    content:url("../assets/Checkmark.svg");
+    outline:none;
+    position:absolute;
+    top:-60%;
+    left:25%;
+  }
+
+  .checkbox p {
+    font-family: Open-Sans, sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    color: #707070;
+    padding-left: 34px;
+    padding-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+@media screen and(min-width: 1000px) {
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    margin-left: 113px;
+  }
+
+
+  form button {
+    margin-left: 213px;
+  }
+}

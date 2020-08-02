@@ -1,0 +1,316 @@
+.small-banners {
+  background-color: #F7F7F7;
+  padding-top: 4rem;
+}
+
+.small-banners__content {
+  h2 {
+    font-weight: 400;
+    color: #000000;
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+    padding-bottom: 1.875rem;
+  }
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    width: 90%;
+    min-width: 20rem;
+    margin: 10% 5%;
+  }
+
+  .always-first {
+    padding: 3rem 0;
+
+    &__text {
+      width: 416px;
+      height: 188px;
+      padding: 0 35px;
+
+      h2 {
+        font-size: 36px;
+        font-weight: 400;
+        padding-top: 2rem;
+      }
+
+      p {
+        position: relative;
+
+        &:after {
+          content: "";
+          width: 327px;
+          position: absolute;
+          left: 0;
+          top: 100%;
+        }
+      }
+    }
+
+    &__image {
+      position: relative;
+
+      img {
+        width: 300px;
+        height: auto;
+        position: relative;
+        z-index: 1;
+
+      }
+
+      &:after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        border-radius: 41px;
+        background-color: #FB3B64;
+        transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+        position: absolute;
+        left: 65%;
+        top: -12%;
+      }
+    }
+  }
+
+
+  .your-shop {
+    &__image {
+      position: relative;
+
+      &:after {
+        content: "";
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        background-color: #07ACE6;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+      }
+
+      img {
+        width: 300px;
+        margin-top: 29px;
+        margin-bottom: 13px;
+        position: relative;
+        z-index: 1;
+      }
+
+    }
+
+    &__text {
+      position: relative;
+      width: 416px;
+      margin-right: 20px;
+      padding: 0 35px;
+
+      p {
+        position: relative;
+        padding-bottom: 50px;
+
+        &:after {
+          content: "";
+          width: 327px;
+          position: absolute;
+          left: 0;
+          top: 100%;
+        }
+      }
+    }
+
+  }
+
+  .recognition {
+    &__text {
+      margin-right: 61px;
+      background-color: #FFFFFF;
+      padding: 0 35px;
+
+      p {
+        position: relative;
+        padding-bottom: 50px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      background-color: #55DFB4;
+
+      img {
+        width: 300px;
+      }
+    }
+  }
+}
+
+
+@media screen and(min-width: 768px) {
+    .small-banners__content{
+      > div {
+        flex-wrap:nowrap;
+      }
+      .always-first {
+        flex-direction: row-reverse;
+      }
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .small-banners {
+    padding: 105px 0;
+  }
+
+  .small-banners__content {
+    > div {
+      display: flex;
+      justify-content: space-between;
+      height: 370px;
+      width: 100%;
+      margin:40px 0 0 0;
+    }
+
+    .always-first {
+      padding:0;
+      &__text {
+        width: 416px;
+        height: 188px;
+        padding-left: 35px;
+
+        h2 {
+          font-size: 36px;
+          font-weight: 400;
+          padding-top: 91px;
+        }
+
+        p {
+          padding-bottom: 50px;
+          position: relative;
+
+          &:after {
+            content: "";
+            border: 4px solid #FB3B64;
+            width: 327px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+          }
+        }
+      }
+
+      &__image {
+        padding-top: 113px;
+        padding-bottom: 38px;
+        padding-right: 117px;
+        position: relative;
+
+        img {
+          height: 219px;
+          width: 386px;
+          position: relative;
+          z-index: 1;
+
+        }
+
+        &:after {
+          content: "";
+          width: 200px;
+          height: 200px;
+          border-radius: 41px;
+          background-color: #FB3B64;
+          transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+          position: absolute;
+          left: 40%;
+          top: 20%;
+        }
+      }
+    }
+
+
+    .your-shop {
+      &__image {
+        position: relative;
+
+        img {
+          height: 328px;
+          width: 426px;
+          margin-top: 29px;
+          margin-left: 70px;
+          margin-bottom: 13px;
+          position: relative;
+          z-index: 1;
+        }
+
+      }
+
+      &__text {
+        position: relative;
+        width: 416px;
+        margin-right: 20px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+
+        h2 {
+          padding-right: 170px;
+        }
+
+        p {
+          position: relative;
+          padding-bottom: 50px;
+
+          &:after {
+            content: "";
+            border: 4px solid #08A6E4;
+            width: 327px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+          }
+        }
+      }
+
+    }
+
+    .recognition {
+      background:none;
+      &__text {
+        width: 623px;
+        height: 370px;
+        margin-right: 61px;
+        padding: 70px 35px;
+
+        h2 {
+          padding-right: 206px;
+        }
+
+        p {
+          position: relative;
+          padding-bottom: 50px;
+
+          &:after {
+            content: "";
+            border: 4px solid $third-green;
+            width: 327px;
+            position: absolute;
+            left: 0;
+            top: 100%;
+          }
+        }
+      }
+
+      &__image {
+        width: 440px;
+        background-color: $third-green;
+
+        img {
+          height: 208px;
+          width: 296px;
+          margin: 92px 82px 64px 62px;
+        }
+      }
+    }
+  }
+}

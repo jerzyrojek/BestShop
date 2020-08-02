@@ -1,0 +1,11 @@
+$primary-blue: #08A6E4;
+$secondary-red: #FB3B64;
+$third-green: #55dfb4;
+
+@mixin circle {
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+}
