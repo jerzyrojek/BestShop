@@ -45,6 +45,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "date-fns": "^2.15.0"
   }
 }

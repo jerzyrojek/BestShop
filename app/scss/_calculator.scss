@@ -1,61 +1,105 @@
 .calculator {
-  background-color:#F7F7F7;
+  background-color: #F7F7F7;
 
   h2 {
-    text-align:center;
-    padding:3rem 0;
+    text-align: center;
+    padding: 3rem 2rem;
   }
+
   margin-bottom: 2rem;
 }
 
 .calculator__content {
-  display:flex;
-  justify-content: space-evenly;
-  padding-bottom:3rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
 }
 
 .calculator__input {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 45%;
-  margin-right: 10%;
+  width: 100%;
 
   input, select {
-    font-size:1.5rem ;
-    border-radius:0.3rem;
+    font-size: 1.5rem;
+    border-radius: 0.3rem;
     height: 2.5rem;
-    outline:none;
-    border:1px solid $primary-blue;
-    margin-bottom:2rem;
-    background-color:white;
+    outline: none;
+    border: 1px solid $primary-blue;
+    margin-bottom: 2rem;
+    background-color: white;
   }
 
   .checkbox {
-    display:flex;
+    display: flex;
+
     input:checked:after {
-      top:-20%;
-      left:25%;
+      top: -20%;
+      left: 25%;
+    }
+
+    p {
+      padding-top: 0.3rem;
     }
 
   }
 }
 
 .calculator__result {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 100%;
+
   li {
+    display: flex;
+    justify-content: space-between;
+    color: white;
     list-style: none;
-    border-radius:0.3rem;
+    border-radius: 0.3rem;
     height: 2rem;
     background-color: $third-green;
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
 
-    &:last-child{
-      background-color:$primary-blue;
+    span:last-child {
+      font-weight: 700;
+    }
+
+    &:last-child {
+      background-color: $primary-blue;
       width: 45%;
       height: 38px;
+    }
+  }
+}
+
+
+@media screen and (min-width: 700px) {
+  .calculator__content {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 3rem;
+
+    h2 {
+      width: 100%;
+    }
+
+    .calculator__input {
+      width: 45%;
+
+      .checkbox {
+        p {
+          padding-top: 0.3rem;
+        }
+      }
+    }
+
+    .calculator__result {
+      width: 45%;
     }
   }
 }

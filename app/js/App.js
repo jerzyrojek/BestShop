@@ -7,17 +7,17 @@ import Questions from "./components/Questions.js";
 import Calculator from "./components/Calculator.js";
 import Footer from "./components/Footer.js";
 
-function App () {
+function App() {
     return (
         <>
-            <Header />
-            <SalesPlatform />
-            <SmallBanners />
-            <Pricing />
-            <Calculator />
-            <Questions />
-            <Footer />
-            </>
+            <Header/>
+            <SalesPlatform/>
+            <SmallBanners/>
+            <Pricing/>
+            <Calculator/>
+            <Questions/>
+            <Footer/>
+        </>
     )
 }
 
