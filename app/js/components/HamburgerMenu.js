@@ -25,8 +25,6 @@ class HamburgerMenu extends Component {
             <nav>
                 <span>BestShop</span>
                 {toggleHamburger}
-                {/*<a className="icon" onClick={this.handleHamburgerClick}><i className="fa fa-bars"></i></a>*/}
-
                 <ul className={`linkMenu ${isHamburgerMenuOpen ? "show" : ""}`}>
                     <li><a href="#">Why us</a></li>
                     <li><a href="#">Benefits</a></li>
