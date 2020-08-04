@@ -6,56 +6,69 @@ class Calculator extends Component {
         super(props);
         this.state = {
             quantity: 0,
+            quantityOpacity:0,
             orders: 0,
+            ordersOpacity:0,
             package: {
                 name: "",
                 price: 0,
+                opacity:0,
             },
             accounting: null,
+            accountingOpacity:0,
             terminal: null,
+            terminalOpacity:0,
         }
     }
 
     handleChangeQuantity = (e) => {
         if(e.target.value < 0){
-           return  alert("Number of products must be a positive number");
+           return  alert("Number of products must be provided");
         } else if (e.target.value > 200000){
            return  alert("For transactions of this size, please reach out to us directly through the form below");
         }
-
-        this.setState({quantity: e.target.value});
+        if(e.target.value > 0) {
+            this.setState({quantity: e.target.value, quantityOpacity: 1});
+        }else {
+            this.setState({quantityOpacity:0});
+        }
     }
 
     handleChangeOrders = (e) => {
         if(e.target.value < 0){
-            return  alert("Number of orders must be a positive");
+            return  alert("Number of orders must be provided");
         } else if (e.target.value > 200000){
             return  alert("For transactions of this size, please reach out to us directly through the form below");
         }
-        this.setState({orders: e.target.value});
+        if(e.target.value > 0) {
+            this.setState({orders: e.target.value, ordersOpacity:1});
+        } else {
+            this.setState({ordersOpacity:0});
+        }
     }
 
     handleChangePackage = (e) => {
         this.setState({
             package: {
                 name: e.target.options[e.target.selectedIndex].innerText,
-                price: parseInt(e.target.value)
+                price: parseInt(e.target.value),
+                opacity:1,
             }
         });
     }
 
     handleChangeAccounting = (e) => {
         if (e.target.checked) {
-            this.setState({accounting: 35});
+            this.setState({accounting: 35, accountingOpacity:1});
         } else {
-            this.setState({accounting: null});
+            this.setState({accounting: null, accountingOpacity:0});
         }
     }
     handleChangeTerminal = (e) => {
         if (e.target.checked) {
-            this.setState({terminal: 5});
+            this.setState({terminal: 5, terminalOpacity:1});
         } else {
-            this.setState({terminal: null});
+            this.setState({terminal: null, terminalOpacity:0});
         }
     }
 
@@ -87,17 +100,17 @@ class Calculator extends Component {
                 </div>
                 <div className="calculator__result">
                     <ul>
-                        <li>
+                        <li style={{opacity:this.state.quantityOpacity}}>
                             <span>Products</span><span>{this.state.quantity} * $0.5</span><span>$ {this.state.quantity * 0.5}</span>
                         </li>
-                        <li>
+                        <li style={{opacity:this.state.ordersOpacity}}>
                             <span>Orders</span><span>{this.state.orders} * $0.25</span><span>$ {this.state.orders * 0.25}</span>
                         </li>
-                        <li>
+                        <li style={{opacity:this.state.package.opacity}}>
                             <span>Package</span><span>{this.state.package.name}</span><span>$ {this.state.package.price}</span>
                         </li>
-                        <li><span>Accounting</span><span>$ {this.state.accounting}</span></li>
-                        <li><span>Terminal</span><span>$ {this.state.terminal}</span></li>
+                        <li style={{opacity:this.state.accountingOpacity}}><span>Accounting</span><span>$ {this.state.accounting}</span></li>
+                        <li style={{opacity:this.state.terminalOpacity}}><span>Terminal</span><span>$ {this.state.terminal}</span></li>
                         <li><span>Total</span><span>$ {total}</span></li>
                     </ul>
                 </div>
