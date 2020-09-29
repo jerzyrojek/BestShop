@@ -1,0 +1,105 @@
+.sales-platform {
+  h2 {
+    text-align: center;
+    margin: 2rem auto;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 121px;
+
+      &:first-child {
+        width:23.375rem;
+        height: auto;
+      }
+
+      &:nth-child(2){
+        width:23.375rem;
+        height: auto;
+      }
+      &:nth-child(3){
+        width:23.375rem;
+        height: auto;
+      }
+
+    p{
+      line-height: 24px;
+      font-size: 20px;
+      font-weight: 800;
+      padding-top: 14px;
+      padding-bottom: 19px;
+      text-align: center;
+    }
+
+    &-text {
+      font-weight: 400;
+      color: #A5A5A5;
+      font-size: 17px;
+      text-align: center;
+      line-height: 20px;
+    }
+  }
+}
+
+.sales-platform__content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap:wrap;
+  .circle-one {
+    @include circle();
+    background-color: $secondary-red;
+    &:after{
+      content: url("../assets/Person.svg");
+      height: 44px;
+      width: 52px;
+      position: absolute;
+      left: 45%;
+    }
+  }
+
+  .circle-two {
+    @include circle();
+    background-color: $primary-blue;
+    &:after {
+      content: url("../assets/Eye.svg");
+      position: absolute;
+      top: 23%;
+      left: 30%;
+    }
+  }
+  .circle-three {
+    @include circle();
+    background-color: $third-green;
+    &:after {
+      content: url("../assets/Catalog.svg");
+      position: absolute;
+      top: 10%;
+      left: 50%;
+    }
+  }
+
+}
+
+.text-item-two {
+  padding:0 10px;
+}
+.text-item-three {
+  padding:0 15px;
+}
+
+@media screen and(min-width: 700px) {
+  .sales-platform {
+    &__content {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+@media screen and(min-width: 1000px){
+  .sales-platform {
+    margin-top:25rem;
+  }
+}

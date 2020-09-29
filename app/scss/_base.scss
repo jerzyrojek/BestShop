@@ -1,0 +1,19 @@
+.container {
+  margin: 0 auto;
+  max-width: 1124px;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+button {
+  outline:none;
+  &:hover {
+    transition: 0.5s ease-in;
+    transform:scale(1.2);
+  }
+  &:active {
+
+  }
+}
