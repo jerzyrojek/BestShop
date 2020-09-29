@@ -30,7 +30,7 @@ class Calculator extends Component {
         if(e.target.value > 0) {
             this.setState({quantity: e.target.value, quantityOpacity: 1});
         }else {
-            this.setState({quantityOpacity:0});
+            this.setState({quantity:0,quantityOpacity:0});
         }
     }
 
@@ -43,7 +43,7 @@ class Calculator extends Component {
         if(e.target.value > 0) {
             this.setState({orders: e.target.value, ordersOpacity:1});
         } else {
-            this.setState({ordersOpacity:0});
+            this.setState({orders:0 ,ordersOpacity:0});
         }
     }
 
