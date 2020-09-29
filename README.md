@@ -1,11 +1,32 @@
-<img alt="Logo" src="http://coderslab.pl/img/coderslab-logo.png" width="400">
+# BestShop
 
-# Zaawansowany HTML i CSS - Warsztat
+A sample landing page of an imaginary shop. It is based on an Adobe XD Project and showcases information that could be important to a user who is visitting the site for the first time such as:
 
-Opis całego warsztatu znajduje się w prezentacji **Moduł 1** / **HTML_i_CSS_Warsztat**.
+- Call to action
+- Benefits of the platform
+- Package pricing
+- Price calculator
+- Contact form
+
+## Description
+
+Project created for learning purposes. Originally coded in HTML/CSS at the beginning of a bootcamp. Later on refactored to Sass and React as well as made responsive. While it would probably be easier to write it from scratch, I thought refactoring my old code would provide a better challenge. This was my first React project.
+
+## Tech stack
+
+- React
+- SCSS
+
+## Installation
+```sh
+npm install
+```
+```sh
+npm start
+```
+Available at http://localhost:3001
 
 
-## Źródła
-- Wersja projektu **on-line** (bez instalacji Adobe XD): https://xd.adobe.com/spec/3e12f9b5-11e7-4d9a-6a6b-e78b20d2a5a6-4823/grid
-- `Workshop-Project.xd` - plik z projektem w formacie Adobe XD
-- `assets` - wyciągnięte wszystkie ikony i obrazki z projektu# BestShop
+## Credits
+
+The design was prepared by Coders Lab
