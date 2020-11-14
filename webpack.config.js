@@ -64,7 +64,7 @@ module.exports = {
     plugins: [
         new Html({
             filename: "index.html",
-            template: `${entryPath}/index.html`
+            template: `index.html`
         })
     ]
 };
