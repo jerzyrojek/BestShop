@@ -1,9 +1,12 @@
 {
-  "name": "reactes6",
+  "name": "bestshop",
+  "homepage": "https://jerzyrojek.github.io/BestShop/",
   "version": "1.0.0",
   "description": "<img alt=\"Logo\" src=\"https://coderslab.pl/svg/logo-coderslab.svg\" width=\"400\">",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot -d",
     "build": "webpack -p"
@@ -18,7 +21,6 @@
   "bugs": {
     "url": "https://github.com/CodersLab-core/FE_ES6_REACT/issues"
   },
-  "homepage": "https://github.com/CodersLab-core/FE_ES6_REACT#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
@@ -46,6 +48,7 @@
   ],
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "date-fns": "^2.15.0"
+    "date-fns": "^2.15.0",
+    "gh-pages": "^3.1.0"
   }
 }

@@ -5,6 +5,7 @@ logs
 npm-debug.log*
 node_modules/
 .sass-cache/
+build
 
 ### OSX ###
 .DS_Store
