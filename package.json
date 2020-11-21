@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d app/build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot -d",
     "build": "webpack -p"
