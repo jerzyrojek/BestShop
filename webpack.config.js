@@ -13,14 +13,13 @@ module.exports = {
         path: path.resolve(__dirname, `${entryPath}/build`)
     },
     devServer: {
-        contentBase: path.join(__dirname, `${entryPath}`),
-        publicPath: "/build/",
+        contentBase: path.join(__dirname, `${entryPath}/build`),
+        publicPath: "/",
         compress: true,
         port: 3001
     },
     mode: "development",
     devtool: "source-map",
-    watch: true,
     module: {
         rules: [
             {
@@ -64,7 +63,7 @@ module.exports = {
     plugins: [
         new Html({
             filename: "index.html",
-            template: `index.html`
+            template: `${entryPath}/index.html`
         })
     ]
 };
