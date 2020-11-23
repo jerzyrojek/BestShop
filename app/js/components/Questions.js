@@ -1,4 +1,6 @@
 import React from "react";
+import mailIcon from "../../assets/Mail Icon.svg";
+import phoneIcon from "../../assets/Phone Icon.svg";
 
 function Questions() {
     return (
@@ -10,11 +12,11 @@ function Questions() {
                         <p>Leave your email address or call us!</p>
                         <div className="questions__content__text-contact">
                             <div className="questions__content__text-contact-email">
-                            <img src="assets/Mail%20Icon.svg" alt="mail-icon"/>
+                            <img src={mailIcon} alt="mail-icon"/>
                             <p>info@bestshop.xyz</p>
                             </div>
                             <div className="questions__content__text-contact-phone">
-                            <img src="assets/Phone%20Icon.svg" alt="phone-icon"/>
+                            <img src={phoneIcon} alt="phone-icon"/>
                             <p>123 456 789</p>
                             </div>
                         </div>

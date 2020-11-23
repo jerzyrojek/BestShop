@@ -1,4 +1,7 @@
 import React from "react";
+import macbook from "../../assets/Macbook.png";
+import iphone from "../../assets/iPhone.png";
+import trumpet from "../../assets/Trumpet.png";
 
 function SmallBanners(){
     return (
@@ -7,7 +10,7 @@ function SmallBanners(){
                 <div className="container small-banners__content">
                     <div className="always-first">
                         <div className="always-first__image">
-                            <img src="assets/Macbook.png" alt="macbook"/>
+                            <img src={macbook} alt="macbook"/>
                         </div>
                         <div className="always-first__text">
                             <h2>Be always first</h2>
@@ -20,7 +23,7 @@ function SmallBanners(){
 
                     <div className="your-shop">
                         <div className="your-shop__image">
-                            <img src="assets/iPhone.png" alt="iphone"/>
+                            <img src={iphone} alt="iphone"/>
                         </div>
                         <div className="your-shop__text">
                             <h2>Your shop is where you are!</h2>
@@ -39,7 +42,7 @@ function SmallBanners(){
                         </div>
 
                         <div className="recognition__image">
-                            <img src="assets/Trumpet.png" alt="trumpet"/>
+                            <img src={trumpet} alt="trumpet"/>
                         </div>
                     </div>
 

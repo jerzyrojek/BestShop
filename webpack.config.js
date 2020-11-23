@@ -20,6 +20,9 @@ module.exports = {
     },
     mode: "development",
     devtool: "source-map",
+    optimization: {
+        minimize: true
+    },
     module: {
         rules: [
             {

@@ -1,4 +1,6 @@
 import React from "react";
+import facebook from "../../assets/Facebook.svg";
+import twitter from "../../assets/Twitter.svg";
 
 function Footer(){
     return(
@@ -9,8 +11,8 @@ function Footer(){
                     <p>© 2019 BestShop LTD, All Rights Reserved</p>
                 </div>
                 <div className="footer__icons">
-                    <img src="assets/Twitter.svg" alt="twitter-logo"/>
-                        <img src="assets/Facebook.svg" alt="facebook-logo"/>
+                    <img src={twitter} alt="twitter-logo"/>
+                        <img src={facebook} alt="facebook-logo"/>
                 </div>
             </footer>
             </>

@@ -11,10 +11,6 @@
     "start": "webpack-dev-server --hot -d",
     "build": "webpack --progress --display-error-details"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CodersLab-core/FE_ES6_REACT.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
