@@ -4,17 +4,17 @@ const Html = require('html-webpack-plugin');
 
 const entryPath = "app";
 const entryFile = "index.js";
-
+const publicPath = "/BestShop/";
 
 module.exports = {
     entry: `./${entryPath}/js/${entryFile}`,
     output: {
         filename: "out.js",
-        path: path.resolve(__dirname, `${entryPath}/build`)
+        path: path.resolve(__dirname, `${entryPath}/build`),
+        publicPath: publicPath,
     },
     devServer: {
         contentBase: path.join(__dirname, `${entryPath}/build`),
-        publicPath: "/",
         compress: true,
         port: 3001
     },
@@ -57,7 +57,7 @@ module.exports = {
                 loader: "file-loader",
                 options: {
                     name: "[name].[ext]",
-                    publicPath: "/assets/",
+                    publicPath: publicPath + "assets/",
                     outputPath: "/assets/"
                 }
             }

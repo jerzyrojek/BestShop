@@ -1,6 +1,6 @@
 import React from "react";
 import facebook from "../../assets/Facebook.svg";
-import twitter from "../../assets/Twitter.svg";
+import twitter from "./../.././assets/Twitter.svg";
 
 function Footer(){
     return(
