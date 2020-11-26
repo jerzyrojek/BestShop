@@ -1,125 +1,142 @@
-import React, {Component} from "react";
+import React, {useState} from 'react';
 
+const Calculator = () => {
+    const [calculatorData, setCalculatorData] = useState({
+        quantity: 0,
+        orders: 0,
+        package: {
+            name: "",
+            price: -1,
+        },
+        accounting: false,
+        terminal: false,
+    });
+    const [error, setError] = useState(false);
 
-class Calculator extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            quantity: 0,
-            quantityOpacity:0,
-            orders: 0,
-            ordersOpacity:0,
-            package: {
-                name: "",
-                price: 0,
-                opacity:0,
-            },
-            accounting: null,
-            accountingOpacity:0,
-            terminal: null,
-            terminalOpacity:0,
-        }
-    }
+    const regEx = new RegExp(/^[0-9]+$/);
 
-    handleChangeQuantity = (e) => {
-        if(e.target.value < 0){
-           return  alert("Number of products must be provided");
-        } else if (e.target.value > 200000){
-           return  alert("For transactions of this size, please reach out to us directly through the form below");
-        }
-        if(e.target.value > 0) {
-            this.setState({quantity: e.target.value, quantityOpacity: 1});
-        }else {
-            this.setState({quantity:0,quantityOpacity:0});
-        }
-    }
-
-    handleChangeOrders = (e) => {
-        if(e.target.value < 0){
-            return  alert("Number of orders must be provided");
-        } else if (e.target.value > 200000){
-            return  alert("For transactions of this size, please reach out to us directly through the form below");
-        }
-        if(e.target.value > 0) {
-            this.setState({orders: e.target.value, ordersOpacity:1});
+    const handleOnChangeInput = (e) => {
+        setError(false);
+        const {name, value} = e.target;
+        if (regEx.test(value)) {
+            setCalculatorData(prev => {
+                return {
+                    ...prev,
+                    [name]: parseInt(value)
+                };
+            })
+        } else if (value === "") {
+            setError(false);
+            setCalculatorData(prev => {
+                return {
+                    ...prev,
+                    [name]: 0
+                };
+            })
         } else {
-            this.setState({orders:0 ,ordersOpacity:0});
+            setError(true);
+            setCalculatorData(prev => {
+                return {
+                    ...prev,
+                    [name]: 0,
+                };
+            })
         }
     }
 
-    handleChangePackage = (e) => {
-        this.setState({
-            package: {
-                name: e.target.options[e.target.selectedIndex].innerText,
-                price: parseInt(e.target.value),
-                opacity:1,
+
+    const handleSelect = (e) => {
+        const {options, selectedIndex, value} = e.target
+        setCalculatorData(prev => {
+            return {
+                ...prev,
+                package: {
+                    name: options[selectedIndex].innerText,
+                    price: parseInt(value),
+                }
             }
-        });
+        })
     }
 
-    handleChangeAccounting = (e) => {
+    const handleOnChangeCheckbox = (e) => {
+        const {name} = e.target;
         if (e.target.checked) {
-            this.setState({accounting: 35, accountingOpacity:1});
+            setCalculatorData(prev => {
+                return {
+                    ...prev,
+                    [name]: true
+                }
+            });
         } else {
-            this.setState({accounting: null, accountingOpacity:0});
-        }
-    }
-    handleChangeTerminal = (e) => {
-        if (e.target.checked) {
-            this.setState({terminal: 5, terminalOpacity:1});
-        } else {
-            this.setState({terminal: null, terminalOpacity:0});
+            setCalculatorData(prev => {
+                return {
+                    ...prev,
+                    [name]: false
+                }
+            })
         }
     }
 
-    render() {
-        let total = (this.state.quantity * 0.5) + (this.state.orders * 0.25) + (this.state.package.price) + this.state.accounting + this.state.terminal;
-        return <section className="calculator">
+    let total = (calculatorData.quantity * 0.5) + (calculatorData.orders * 0.25) + (calculatorData.package.price > -1 && calculatorData.package.price) + (calculatorData.accounting && 5) + (calculatorData.terminal && 25);
+    const validate = () => {
+        if (!regEx.test(calculatorData.quantity) || !regEx.test(calculatorData.orders)) {
+            setError(true);
+        }
+    }
+
+    return (
+        <section className="calculator">
             <h2>Calculate how much you'll pay</h2>
             <div className="container calculator__content">
                 <div className="calculator__input">
-                    <input onChange={this.handleChangeQuantity} id="quantity" type="number"
+                    <input maxLength={6} onChange={handleOnChangeInput} name="quantity" id="quantity" type="text"
                            placeholder="Products quantity"/>
-                    <input onChange={this.handleChangeOrders} id="orders " type="number"
+                    <input maxLength={6} onChange={handleOnChangeInput} name="orders" id="orders " type="text"
                            placeholder="Estimated orders in month"/>
-                    <select id="packagePlan" onChange={this.handleChangePackage}>
-                        <option disabled selected>Choose a package</option>
+                    <select onChange={handleSelect} name="packagePlan" id="packagePlan"
+                            value={calculatorData.package.price}>
+                        <option disabled value={-1}>Choose a package</option>
                         <option value={0}>Basic</option>
                         <option value={25}>Professional</option>
                         <option value={60}>Premium</option>
                     </select>
                     <div className="checkbox">
-                        <input onChange={this.handleChangeAccounting} name="accounting-checkbox" type="checkbox"/>
+                        <input onChange={handleOnChangeCheckbox} name="accounting" type="checkbox"/>
                         <p>Accounting</p>
                     </div>
                     <div className="checkbox">
-                        <input onChange={this.handleChangeTerminal} type="checkbox"/>
+                        <input onChange={handleOnChangeCheckbox} name="terminal" type="checkbox"/>
                         <p>Rental of payment terminal</p>
                     </div>
 
                 </div>
                 <div className="calculator__result">
                     <ul>
-                        <li style={{opacity:this.state.quantityOpacity}}>
-                            <span>Products</span><span>{this.state.quantity} * $0.5</span><span>$ {this.state.quantity * 0.5}</span>
+
+                        <li style={{opacity: calculatorData.quantity > 0 ? 1 : 0}}>
+                            <span>Products</span><span>{calculatorData.quantity} * $0.5</span><span>$ {calculatorData.quantity * 0.5}</span>
                         </li>
-                        <li style={{opacity:this.state.ordersOpacity}}>
-                            <span>Orders</span><span>{this.state.orders} * $0.25</span><span>$ {this.state.orders * 0.25}</span>
+
+                        <li style={{opacity: calculatorData.orders > 0 ? 1 : 0}}>
+                            <span>Orders</span><span>{calculatorData.orders} * $0.25</span><span>$ {calculatorData.orders * 0.25}</span>
                         </li>
-                        <li style={{opacity:this.state.package.opacity}}>
-                            <span>Package</span><span>{this.state.package.name}</span><span>$ {this.state.package.price}</span>
+                        <li style={{opacity: calculatorData.package.price > -1 ? 1 : 0}}>
+                            <span>Package</span><span>{calculatorData.package.name}</span><span>$ {calculatorData.package.price}</span>
                         </li>
-                        <li style={{opacity:this.state.accountingOpacity}}><span>Accounting</span><span>$ {this.state.accounting}</span></li>
-                        <li style={{opacity:this.state.terminalOpacity}}><span>Terminal</span><span>$ {this.state.terminal}</span></li>
+                        <li style={{opacity: calculatorData.accounting ? 1 : 0}}>
+                            <span>Accounting</span><span>$ {calculatorData.accounting && 5}</span></li>
+                        <li style={{opacity: calculatorData.terminal ? 1 : 0}}>
+                            <span>Terminal</span><span>$ {calculatorData.terminal && 25}</span></li>
                         <li><span>Total</span><span>$ {total}</span></li>
                     </ul>
+                    {error ?
+                        <span className="calculator__result-error">Invalid input, please use numbers only</span> :
+                        <span className="calculator__result-error"/>}
                 </div>
             </div>
         </section>
-    }
-
-}
+    );
+};
 
 export default Calculator;
-
 
