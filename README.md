@@ -8,6 +8,8 @@ A sample landing page of an imaginary shop. It is based on an Adobe XD Project a
 - Price calculator
 - Contact form
 
+Project available at https://jerzyrojek.github.io/BestShop/
+
 ## Description
 
 Project created for learning purposes. Originally coded in HTML/CSS at the beginning of a bootcamp. Later on refactored to Sass and React as well as made responsive. While it would probably be easier to write it from scratch, I thought refactoring my old code would provide a better challenge. This was my first React project.
